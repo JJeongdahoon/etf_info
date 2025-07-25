@@ -6,7 +6,8 @@ import os
 app = FastAPI()
 
 # ====== JSON 파일 로드 ======
-DATA_PATH = r"C:\Users\k\workspace\project\crawling\data\tiger_etf_top10.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "tiger_etf_top10.json")
 with open(DATA_PATH, "r", encoding="utf-8") as f:
     etf_data = json.load(f)
 
